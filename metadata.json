@@ -1,0 +1,5 @@
+{
+  "name": "GitMate - AI Pair Programmer",
+  "description": "Collaborate on your GitHub projects with an AI partner. Enter a repository link, provide context, and build together.",
+  "requestFramePermissions": []
+}
