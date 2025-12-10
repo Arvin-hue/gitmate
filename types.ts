@@ -4,6 +4,10 @@ export interface Message {
   content: string;
   timestamp: number;
   isStreaming?: boolean;
+  attachment?: {
+    data: string; // base64
+    mimeType: string;
+  };
 }
 
 export interface FileContext {
@@ -17,6 +21,9 @@ export interface ProjectState {
   name: string;
   description: string;
   files: FileContext[];
+  chatHistory: Message[];
+  model?: string; // 'gemini-2.5-flash' | 'gemini-3-pro-preview'
+  githubToken?: string;
 }
 
 export enum AppView {
@@ -27,4 +34,12 @@ export enum AppView {
 export interface ChatSession {
   id: string;
   messages: Message[];
+}
+
+export interface GitHubNode {
+  name: string;
+  path: string;
+  type: 'file' | 'dir';
+  url: string;
+  download_url: string | null;
 }
